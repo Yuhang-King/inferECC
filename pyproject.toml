@@ -1,0 +1,41 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inferECC"
+version = "1.0.0"
+description = "inferECC: single-cell ecDNA inference pipeline utilities based on single-cell ATAC-seq data"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "Proprietary"}
+authors = [{name = "YUHANG WANG(wyh.scut@foxmail.com)"}]
+
+# 依赖：尽量写“运行时必需”的，绘图/scanpy 可以做成可选（见下）
+dependencies = [
+  "numpy",
+  "pandas",
+  "matplotlib",
+  "scanpy",
+  "anndata",
+  "scipy",
+]
+
+[project.optional-dependencies]
+# 需要时再装：pip install -e ".[plot]"
+plot = ["matplotlib"]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools]
+# 关键：告诉 setuptools 包在哪
+packages = {find = {where = ["src"]}}
+
+[tool.setuptools.package-data]
+# 把 reference 数据文件打进包（非常关键，否则安装后找不到 hg38_tss.bed 等）
+inferECC = [
+  "tools/reference/*.bed",
+  "tools/reference/*.tsv",
+  "tools/Uniform_Distribution/*.csv",
+]
+
