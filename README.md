@@ -307,3 +307,4 @@ If you use `inferECC` in academic work, please:
 ## Version
 
 Current package version: **1.0.0**
+Current package version: **1.0.0**
