@@ -28,6 +28,7 @@ A Python toolkit for **ecDNA (extrachromosomal circular DNA) inference** from **
 - [API Overview](#api-overview)
 - [References and Genomes](#references-and-genomes)
 - [FAQ](#faq)
+- [License](#license)
 - [Citation](#citation)
 - [Changelog](#changelog)
 
@@ -288,6 +289,13 @@ Some plotting functions create directories and call `os.chdir()` internally; set
 
 ### Q5: Is this package compatible with AnnData workflows?
 Yes. `sum_by`, `sum_by_sparse`, and `neighbor_correlation` support AnnData-centric matrix aggregation and neighborhood-correlation annotation.
+
+---
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
+See [LICENSE](./LICENSE) for the full license text.
 
 ---
 
