@@ -11,6 +11,12 @@ A Python toolkit for **ecDNA (extrachromosomal circular DNA) inference** from **
 
 ---
 
+## Pipeline Overview
+
+![inferECC pipeline](data/pic/inferecc_pipeline.png)
+
+---
+
 ## Table of Contents
 
 - [Why inferECC](#why-inferecc)
