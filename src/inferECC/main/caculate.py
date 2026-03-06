@@ -45,5 +45,3 @@ def caculate_fragments_number(
     df_fragments_number_sort = df_fragments_number.sort_values(by = ["fragments_number"])
     
     return df_fragments_number_sort
-
-
