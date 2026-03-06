@@ -1,9 +1,10 @@
 # inferECC
+Inferring extrachromosomal circular DNA from single-cell chromatin accessibility sequencing data.
 
 [![Python](https://img.shields.io/badge/python-%3E%3D3.7-blue.svg)](https://www.python.org/)
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](./pyproject.toml)
 [![Build](https://img.shields.io/badge/build-setuptools-informational.svg)](./pyproject.toml)
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](./pyproject.toml)
+[![License](https://img.shields.io/badge/license-Proprietary-lightgrey.svg)](./pyproject.toml)
 
 A Python toolkit for **ecDNA (extrachromosomal circular DNA) inference** from **single-cell ATAC-seq fragments**.  
 `inferECC` provides a practical workflow from raw fragment tables to region-level scoring and visualization, centered on `pandas.DataFrame` utilities plus optional `AnnData` helpers.
@@ -18,7 +19,6 @@ A Python toolkit for **ecDNA (extrachromosomal circular DNA) inference** from **
 
 ## Table of Contents
 
-- [Pipeline Overview](#pipeline-overview)
 - [Why inferECC](#why-inferecc)
 - [Features](#features)
 - [Installation](#installation)
