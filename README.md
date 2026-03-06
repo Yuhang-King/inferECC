@@ -1,4 +1,5 @@
 # inferECC
+Inferring extrachromosomal circular DNA from single-cell chromatin accessibility sequencing data.
 
 [![Python](https://img.shields.io/badge/python-%3E%3D3.7-blue.svg)](https://www.python.org/)
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](./pyproject.toml)
@@ -305,4 +306,5 @@ If you use `inferECC` in academic work, please:
 
 ## Version
 
+Current package version: **1.0.0**
 Current package version: **1.0.0**
