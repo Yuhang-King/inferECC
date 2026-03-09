@@ -53,6 +53,20 @@ from .visualization.heatmap_row import (
     heatmap_fi_plot,
 )
 
+# --- visualization (可选：不建议默认导出所有plot函数) ---
+from .crc_deg.ecdna_mtx import (
+    find_resolution, 
+    get_highest_expr_top_mean_genes,
+    get_highly_variable_top_mean_genes,
+    get_highly_variable_top_disp_genes,
+    get_deg_df,
+    volcano_plot,
+    calculate_overlap_pvalue,
+    self_Overlap_pvalue_Heatmap,
+    count_element_frequency,
+    top_n_keys,
+)
+
 __all__ = [
   "read_bgi_as_dataframe",
   "Transform", "fragments_segmentation", "Normalize",
@@ -61,6 +75,7 @@ __all__ = [
   "tss_site", "tss_region", "genebody_region", "intergenic_region",
   "tss_score", "genebody_score",
   "Neighbor", "neighbor_correlation", "sum_by","sum_by_sparse",
-  "ochh_mtx", "ochh_mtx_ks_test","coverage_density",
+  "ochh_mtx", "ochh_mtx_ks_test","coverage_density","fragments_length","enrichment_plot","bp_from_tss","heatmap_chr","heatmap_chr_fi","heatmap_raw_plot","heatmap_fi_plot",
+  #"find_resolution", "get_highest_expr_top_mean_genes", "get_highly_variable_top_mean_genes", "get_highly_variable_top_disp_genes", "get_deg_df", "volcano_plot", "calculate_overlap_pvalue", "self_Overlap_pvalue_Heatmap", "count_element_frequency", "top_n_keys",
 ]
 
