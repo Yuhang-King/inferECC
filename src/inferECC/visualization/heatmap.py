@@ -49,8 +49,8 @@ def heatmap_chr(
              'fragnum_1k': [0]*100}
         )
         df_cb_uni_dd_tri_ref_con = pd.concat(
-            [df_cb_uni_dd_tri,df_cb_uni_dd_tri_ref],
-            keys=['chr_100k', 'index_num', 'fragnum_1k']
+            [df_cb_uni_dd_tri, df_cb_uni_dd_tri_ref],
+            axis=0
         )
         df_mtx=pd.pivot_table(
             df_cb_uni_dd_tri_ref_con,
@@ -108,8 +108,8 @@ def heatmap_chr_fi(
              'fragnum_1k': [0]*100}
         )
         df_cb_uni_dd_tri_ref_con = pd.concat(
-            [df_cb_uni_dd_tri,df_cb_uni_dd_tri_ref],
-            keys=['chr_100k', 'index_num', 'fragnum_1k']
+            [df_cb_uni_dd_tri, df_cb_uni_dd_tri_ref],
+            axis=0
         )
         df_mtx=pd.pivot_table(
             df_cb_uni_dd_tri_ref_con,
@@ -132,4 +132,3 @@ def heatmap_chr_fi(
         plt.savefig(cb+".pdf")
         pass
     pass
-
