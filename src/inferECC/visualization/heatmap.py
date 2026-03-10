@@ -50,7 +50,7 @@ def heatmap_chr(
         )
         df_cb_uni_dd_tri_ref_con = pd.concat(
             [df_cb_uni_dd_tri, df_cb_uni_dd_tri_ref],
-            ignore_index=True
+            axis=0
         )
         df_mtx=pd.pivot_table(
             df_cb_uni_dd_tri_ref_con,
@@ -109,7 +109,7 @@ def heatmap_chr_fi(
         )
         df_cb_uni_dd_tri_ref_con = pd.concat(
             [df_cb_uni_dd_tri, df_cb_uni_dd_tri_ref],
-            ignore_index=True
+            axis=0
         )
         df_mtx=pd.pivot_table(
             df_cb_uni_dd_tri_ref_con,
