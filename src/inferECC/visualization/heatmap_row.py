@@ -52,9 +52,8 @@ def ochh_mtx(
          'fragnum_1k': [0]*100}
     )
     df_cb_uni_dd_tri_ref_con = pd.concat(
-        {"df1":df_cb_uni_dd_tri,
-         "df2":df_cb_uni_dd_tri_ref
-        }
+        [df_cb_uni_dd_tri, df_cb_uni_dd_tri_ref],
+        axis=0
     )
     df_cb_uni_dd_tri_ref_con['index_num']=df_cb_uni_dd_tri_ref_con['index_num'].astype(int)
     #print(df_cb_uni_dd_tri_ref_con)
