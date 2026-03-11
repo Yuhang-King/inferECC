@@ -269,6 +269,8 @@ df_fi_dd_uni_fi.to_csv("cellXecDNA_fi.matrix.tsv",sep="\t",index=True)
 # 经过 ks uniform 检测过的 mtx
 #mtx_raw_fi_ks = pd.read_csv(lib_dir+"/ks_uniform_qsub/cellXecDNA_fi.matrix.tsv",sep="\t")
 mtx_raw_fi_ks = df_fi_dd_uni_fi.copy()
+# 避免 barcode/chr_100k 同时存在于 index level 和列名导致 pivot_table 歧义
+mtx_raw_fi_ks = mtx_raw_fi_ks.reset_index(drop=True)
 ### step 1
 # cxe_mm 稠密矩阵
 cxe_mm = pd.pivot_table(mtx_raw_fi_ks,
@@ -333,6 +335,8 @@ print(os.getcwd())
 # 经过 ks uniform 检测过的 mtx
 #mtx_raw_fi_ks = pd.read_csv("./ks_uniform_qsub/cellXecDNA_fi.matrix.tsv",sep="\t")
 mtx_raw_fi_ks = df_fi_dd_uni_fi.copy()
+# 避免 barcode/chr_100k 同时存在于 index level 和列名导致后续筛选与透视歧义
+mtx_raw_fi_ks = mtx_raw_fi_ks.reset_index(drop=True)
 # 包含 coverage<6 部分的mtx
 #cell_coverage = pd.read_csv("./cell_coverage.matrix.tsv",sep="\t")
 cell_coverage = df_fragments_cutoff_normalize_dd.copy()
@@ -343,7 +347,9 @@ cc_dd_ch = cc_dd[cc_dd["chr_100k"].isin(mtx_raw_fi_ks["chr_100k"].unique())]
 cc_dd_ch_bc = cc_dd_ch[cc_dd_ch["barcode"].isin(mtx_raw_fi_ks["barcode"].unique())]
 cc_dd_ch_bc.to_csv("cellXecDNA_before_merge_long.matrix.tsv",sep="\t",index=True)
 
-cxe_mtx = cc_dd_ch_bc[["barcode","chr_100k","Coverage","chrom","start_100k"]]
+cxe_mtx = cc_dd_ch_bc[["barcode","chr_100k","Coverage","chrom","start_100k"]].copy()
+# 避免 barcode/chr_100k 同时存在于 index level 和列名导致 pivot_table 歧义
+cxe_mtx = cxe_mtx.reset_index(drop=True)
 cxe_mtx_sv = cxe_mtx.sort_values(by=["chrom","start_100k"],ascending=(True,True))
 # cxe_mm 稠密矩阵
 cxe_mm = pd.pivot_table(cxe_mtx,
